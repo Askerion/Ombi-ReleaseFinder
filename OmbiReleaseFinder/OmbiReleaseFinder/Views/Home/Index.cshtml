@@ -1,131 +1,212 @@
-﻿@*<link rel="stylesheet" href="~/css/site.css" />
-<script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous" />
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous" />
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>*@
+﻿<link rel="stylesheet" href="~/css/home.css" />
+
 
 @model IEnumerable<CustomMovie>
 @{
     ViewData["Title"] = "Home Page";
 }
+@{
+
+    Layout = "~/Views/Shared/_customlayout.cshtml";
+
+}
 
 
-<script>
-    $("#list li").live('click', function () {
-        //  ret = DetailsView.GetProject($(this).attr("#data-id"), OnComplete, OnTimeOut, OnError);
-        alert($(this).data("id"));
-    });
+@*<script>
+        $("#list li").live('click', function () {
+            //  ret = DetailsView.GetProject($(this).attr("#data-id"), OnComplete, OnTimeOut, OnError);
+            alert($(this).data("id"));
+        });
 
-    function myFunction() {
-        alert($("#button1").data("sample-id"));
-    }
-
-
-    function myFunction2() {
-        alert($("#qrCode").data("sample-id"));
-    }
-</script>
-
-
-
-
-
-<h2>Testprojekt mit Liste als Model</h2>
-<textarea class="form-control" id="TextBox1"></textarea>
-
-<table id="PersonTable" class="table table-hover table-striped table-bordered">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.PosterPath)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.OriginalTitle)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Title)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Releasenames)
-            </th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model)
-        {
-            <tr>
-                <td>
-                    <img src="@Url.Content(item.PosterPath)" alt="Image" />
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.OriginalTitle)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Title)
-                </td>
-                <td>
-                    @foreach (var name in item.Releasenames)
-                    {
-                        @Html.DisplayFor(modelItem => name.Name)<BR>
-                    }
-                </td>
-                <td>
-                    @if (item.FtpRelease.Count > 0)
-                    {   
-                        <div id="modal-placeholder"></div>                    
-                        <button type="button" class="btn btn-primary btn-lg" data-toggle="ajax-modal" data-target="#myModal" data-url="@Url.Action("MovieModal")" data-search="?moviedbid=" data-movieid="@item.MovieDbId">
-                            Release Found
-                        </button>
-                    }
-
-
-
-
-                </td>
-            </tr>
+        function myFunction() {
+            alert($("#button1").data("sample-id"));
         }
-    </tbody>
-</table>
 
 
-<!-- Modal -->
-@*@foreach (var item in Model)
-    {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.title)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.released)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.available)
-            </td>
-        </tr>
-    }*@
+        function myFunction2() {
+            alert($("#qrCode").data("sample-id"));
+        }
+    </script>*@
 
 
-@*<div id="app">
-        <div class="loader"></div>
 
-        <ul>
+
+
+@*<h2>Testprojekt mit Liste als Model</h2>
+    <textarea class="form-control" id="TextBox1"></textarea>
+
+    <table id="PersonTable" class="table table-hover table-striped table-bordered">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.PosterPath)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.OriginalTitle)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Title)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Releasenames)
+                </th>
+            </tr>
+        </thead>
+        <tbody>
             @foreach (var item in Model)
             {
-                <li>
-                    <img src="http://image.tmdb.org/t/p/w185/@Url.Content(item.PosterPath)" alt="test">
-                    <section>
+                <tr>
+                    <td>
+                        <img src="@Url.Content(item.PosterPath)" alt="Image" />
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.OriginalTitle)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Title)
+                    </td>
+                    <td>
+                        @foreach (var name in item.Releasenames)
+                        {
+                            @Html.DisplayFor(modelItem => name.Name)<BR>
+                        }
+                    </td>
+                    <td>
+                        @if (item.FtpRelease.Count > 0)
+                        {
+                            <div id="modal-placeholder"></div>
+                            <button type="button" class="btn btn-primary btn-lg" data-toggle="ajax-modal" data-target="#myModal" data-url="@Url.Action("MovieModal")" data-search="?moviedbid=" data-movieid="@item.MovieDbId">
+                                Release Found
+                            </button>
+                        }
 
-                        <h3>{{ @Html.DisplayFor(modelItem => item.OriginalTitle) }}</h3>
-                        <p>{{ @Html.DisplayFor(modelItem => item.OriginalTitle) }}</p>
 
 
-                    </section>
-                </li>
 
+                    </td>
+                </tr>
             }
-        </ul>
+        </tbody>
+    </table>*@
 
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <div class="top"><span class="header"><i class="fa fa-film icon" aria-hidden="true"></i>&nbspCINEBOX</span></div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div class="menu-filter">
+                <div class="row">
+                    <div class="col pull-left">
+                    </div>
+                    <div class="col pull-right">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row movies">
+
+
+        @foreach (var item in Model)
+        {
+            <div class="col-lg-4">
+                <div class="wrapper">
+                    <div class="row no-gutters">
+                        <div class="col-lg-6">
+                            <div class="movies" id="1">
+                                @*<img src="@Url.Content(item.PosterPath)" alt="Image" height="278" /> <br>*@
+                                <input type="image" id="image33" src="@Url.Content(item.PosterPath)" data-toggle="ajax-modal" data-target="#myModal" data-url="@Url.Action("MovieModal")" data-search="?moviedbid=" data-movieid="@item.MovieDbId" height="278" />
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="side">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="mname">@Html.DisplayFor(modelItem => item.Title)</div>
+                                    </div>
+                                    <div id="modal-placeholder"></div>
+                                    @*<button type="button" class="btn btn-primary btn-lg" data-toggle="ajax-modal" data-target="#myModal" data-url="@Url.Action("MovieModal")" data-search="?moviedbid=" data-movieid="@item.MovieDbId">
+                                            Release Found
+                                        </button>*@
+                                    @*<div class="col-12">
+                                            <div class="year">(2014)</div>
+                                        </div>
+                                        <div class="col-12 stars">
+                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                            <i class="fa fa-star-o" aria-hidden="true"></i>
+                                        </div>*@
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+
+
+
+
+
+
+    </div>
+</div>
+
+
+
+@*<div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="top"><span class="header"><i class="fa fa-film icon" aria-hidden="true"></i>&nbspCINEBOX</span></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="menu-filter">
+                    <div class="row">
+                        <div class="col pull-left">
+                        </div>
+                        <div class="col pull-right">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row movies">
+            <div class="col-lg-4">
+                <div class="wrapper">
+                    <div class="row no-gutters">
+                        <div class="col-lg-6">
+                            <div class="poster2" id="1">
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="side">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="mname">Kill Bill: Vol.1</div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="year">(2014)</div>
+                                    </div>
+                                    <div class="col-12 stars">
+                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                        <i class="fa fa-star-o" aria-hidden="true"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>*@
-
-

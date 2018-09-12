@@ -1,10 +1,15 @@
-﻿<link rel="stylesheet" href="~/css/site.css" />
+﻿<link rel="stylesheet" href="~/css/MovieModal.css" />
 @model CustomMovie
+@{
+
+        Layout = null;
+
+}
 
 <!-- Modal -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content">           
+        <div class="modal-content">
             <table id="classTable" class="customTable">
                 <thead>
                 </thead>
@@ -16,8 +21,8 @@
                             {
                                 @Html.DisplayFor(modelItem => item.FtpReleasename)<BR>
                             }
-                                            </td>
-                      
+                        </td>
+
                     </tr>
                 </tbody>
             </table>
@@ -25,5 +30,5 @@
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
             </div>
         </div>
-        </div>
+    </div>
 </div>
