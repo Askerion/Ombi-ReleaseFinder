@@ -1,0 +1,131 @@
+﻿@*<link rel="stylesheet" href="~/css/site.css" />
+<script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous" />
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>*@
+
+@model IEnumerable<CustomMovie>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+<script>
+    $("#list li").live('click', function () {
+        //  ret = DetailsView.GetProject($(this).attr("#data-id"), OnComplete, OnTimeOut, OnError);
+        alert($(this).data("id"));
+    });
+
+    function myFunction() {
+        alert($("#button1").data("sample-id"));
+    }
+
+
+    function myFunction2() {
+        alert($("#qrCode").data("sample-id"));
+    }
+</script>
+
+
+
+
+
+<h2>Testprojekt mit Liste als Model</h2>
+<textarea class="form-control" id="TextBox1"></textarea>
+
+<table id="PersonTable" class="table table-hover table-striped table-bordered">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.PosterPath)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OriginalTitle)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Releasenames)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    <img src="@Url.Content(item.PosterPath)" alt="Image" />
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.OriginalTitle)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Title)
+                </td>
+                <td>
+                    @foreach (var name in item.Releasenames)
+                    {
+                        @Html.DisplayFor(modelItem => name.Name)<BR>
+                    }
+                </td>
+                <td>
+                    @if (item.FtpRelease.Count > 0)
+                    {   
+                        <div id="modal-placeholder"></div>                    
+                        <button type="button" class="btn btn-primary btn-lg" data-toggle="ajax-modal" data-target="#myModal" data-url="@Url.Action("MovieModal")" data-search="?moviedbid=" data-movieid="@item.MovieDbId">
+                            Release Found
+                        </button>
+                    }
+
+
+
+
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+<!-- Modal -->
+@*@foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.released)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.available)
+            </td>
+        </tr>
+    }*@
+
+
+@*<div id="app">
+        <div class="loader"></div>
+
+        <ul>
+            @foreach (var item in Model)
+            {
+                <li>
+                    <img src="http://image.tmdb.org/t/p/w185/@Url.Content(item.PosterPath)" alt="test">
+                    <section>
+
+                        <h3>{{ @Html.DisplayFor(modelItem => item.OriginalTitle) }}</h3>
+                        <p>{{ @Html.DisplayFor(modelItem => item.OriginalTitle) }}</p>
+
+
+                    </section>
+                </li>
+
+            }
+        </ul>
+
+    </div>*@
+
+
