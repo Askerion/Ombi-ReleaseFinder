@@ -16,14 +16,16 @@ namespace OmbiReleaseFinder.Controllers
     {
         public static IOptions<AppSettingFtp> _ftpSettings { get; set; }
         public static IOptions<AppSettingOmbi> _ombiSettings { get; set; }
-
+        public static MovieDatabaseContext _context { get; set; }
 
         MovieDatabaseContext _releases = new MovieDatabaseContext();
         
-        public HomeController(IOptions<AppSettingFtp> ftpSettings, IOptions<AppSettingOmbi> ombiSettings)
+
+        public HomeController(IOptions<AppSettingFtp> ftpSettings, IOptions<AppSettingOmbi> ombiSettings, MovieDatabaseContext context)
         {
             _ftpSettings = ftpSettings;
             _ombiSettings = ombiSettings;
+            _context = context;
         }
         public IActionResult Index()
         {

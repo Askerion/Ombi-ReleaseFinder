@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using OmbiReleaseFinder.Controllers;
 using OmbiReleaseFinder.Models;
 using System;
 using System.Collections.Generic;
@@ -10,7 +11,7 @@ namespace OmbiReleaseFinder.Providers
 {
     internal class Movie2FtpProvider
     {
-        private MovieDatabaseContext _db = new MovieDatabaseContext();
+        private MovieDatabaseContext _db = HomeController._context;
         
 
 
