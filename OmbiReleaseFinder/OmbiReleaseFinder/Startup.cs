@@ -35,13 +35,11 @@ namespace OmbiReleaseFinder
             });
 
             //SQL Server hinzufügen
-            var connection = @"Server=(localdb)\mssqllocaldb;Database=Database;Trusted_Connection=True;";
-            services.AddDbContext<MovieDatabaseContext>(options => options.UseSqlServer(connection));
-
-
+            //var connection = @"Server=(localdb)\mssqllocaldb;Database=Database;Trusted_Connection=True;";
+            //services.AddDbContext<MovieDatabaseContext>(options => options.UseSqlServer(connection));
             //var connection = @"Server=(localdb)\mssqllocaldb;Database=MovieDatabase;Trusted_Connection=True;";
             //services.AddDbContext<MovieDatabaseContext>(options => options.UseSqlServer(connection));
-            //services.AddDbContext<MovieDatabaseContext>(options => options.UseSqlServer(Configuration.GetConnectionString("MovieDatabase")));
+            services.AddDbContext<MovieDatabaseContext>(options => options.UseSqlServer(Configuration.GetConnectionString("MovieDatabase")));
 
 
 
