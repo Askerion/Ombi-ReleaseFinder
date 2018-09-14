@@ -1,0 +1,105 @@
+INFO  13-17-2018 17:17:15 Microsoft.AspNetCore.Hosting.Internal.WebHost [7] - Request starting HTTP/1.1 DEBUG http://localhost:26531/  0 
+INFO  13-17-2018 17:17:15 Microsoft.AspNetCore.Hosting.Internal.WebHost [14] - Request starting HTTP/1.1 GET http://localhost:44346/   
+INFO  13-17-2018 17:17:15 Microsoft.AspNetCore.Hosting.Internal.WebHost [7] - Request finished in 77.0041ms 200  
+INFO  13-17-2018 17:17:15 Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker [14] - Route matched with {action = "Index", controller = "Home"}. Executing action OmbiReleaseFinder.Controllers.HomeController.Index (OmbiReleaseFinder) 
+INFO  13-17-2018 17:17:16 Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker [14] - Executing action method OmbiReleaseFinder.Controllers.HomeController.Index (OmbiReleaseFinder) - Validation state: Valid 
+INFO  13-17-2018 17:17:19 Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker [14] - Executed action method OmbiReleaseFinder.Controllers.HomeController.Index (OmbiReleaseFinder), returned result Microsoft.AspNetCore.Mvc.ViewResult in 3167.8816ms. 
+INFO  13-17-2018 17:17:19 Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor [14] - Executing ViewResult, running view Index. 
+INFO  13-17-2018 17:17:19 Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor [14] - Executed ViewResult - view Index executed in 233.5893ms. 
+INFO  13-17-2018 17:17:19 Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker [14] - Executed action OmbiReleaseFinder.Controllers.HomeController.Index (OmbiReleaseFinder) in 3612.8314ms 
+INFO  13-17-2018 17:17:19 Microsoft.AspNetCore.Hosting.Internal.WebHost [14] - Request finished in 3924.6492ms 200 text/html; charset=utf-8 
+INFO  13-17-2018 17:17:19 Microsoft.AspNetCore.Hosting.Internal.WebHost [14] - Request starting HTTP/1.1 GET http://localhost:44346/lib/bootstrap/dist/css/bootstrap.css   
+INFO  13-17-2018 17:17:19 Microsoft.AspNetCore.Hosting.Internal.WebHost [12] - Request starting HTTP/1.1 GET http://localhost:44346/css/home.css   
+INFO  13-17-2018 17:17:19 Microsoft.AspNetCore.Hosting.Internal.WebHost [13] - Request starting HTTP/1.1 GET http://localhost:44346/css/site.css   
+INFO  13-17-2018 17:17:19 Microsoft.AspNetCore.Hosting.Internal.WebHost [16] - Request starting HTTP/1.1 GET http://localhost:44346/Home/PostAndShow   
+INFO  13-17-2018 17:17:19 Microsoft.AspNetCore.Hosting.Internal.WebHost [7] - Request starting HTTP/1.1 GET http://localhost:44346/js/site.js?v=3Du1iGBAzHuNriw1qX6kHVKTqIzU5bV48fXOWjOwHKc   
+INFO  13-17-2018 17:17:19 Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware [12] - The file /css/home.css was not modified 
+INFO  13-17-2018 17:17:19 Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware [13] - The file /css/site.css was not modified 
+INFO  13-17-2018 17:17:19 Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware [7] - The file /js/site.js was not modified 
+INFO  13-17-2018 17:17:19 Microsoft.AspNetCore.Hosting.Internal.WebHost [12] - Request finished in 81.4517ms 304 text/css 
+INFO  13-17-2018 17:17:19 Microsoft.AspNetCore.Hosting.Internal.WebHost [13] - Request finished in 80.4214ms 304 text/css 
+INFO  13-17-2018 17:17:19 Microsoft.AspNetCore.Hosting.Internal.WebHost [7] - Request finished in 52.9772ms 304 application/javascript 
+INFO  13-17-2018 17:17:19 Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker [16] - Route matched with {action = "PostAndShow", controller = "Home"}. Executing action OmbiReleaseFinder.Controllers.HomeController.PostAndShow (OmbiReleaseFinder) 
+INFO  13-17-2018 17:17:19 Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker [16] - Executing action method OmbiReleaseFinder.Controllers.HomeController.PostAndShow (OmbiReleaseFinder) - Validation state: Valid 
+INFO  13-17-2018 17:17:22 Controllers.HomeController [16] - Test log information 001 
+INFO  13-17-2018 17:17:22 Controllers.HomeController [16] - Test log information 002 
+INFO  13-17-2018 17:17:22 Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker [16] - Executed action method OmbiReleaseFinder.Controllers.HomeController.PostAndShow (OmbiReleaseFinder), returned result Microsoft.AspNetCore.Mvc.ContentResult in 3168.5883ms. 
+INFO  13-17-2018 17:17:22 Microsoft.AspNetCore.Mvc.Infrastructure.ContentResultExecutor [16] - Executing ContentResult with HTTP Response ContentType of text/plain; charset=utf-8 
+INFO  13-17-2018 17:17:22 Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker [16] - Executed action OmbiReleaseFinder.Controllers.HomeController.PostAndShow (OmbiReleaseFinder) in 3206.272ms 
+INFO  13-17-2018 17:17:22 Microsoft.AspNetCore.Hosting.Internal.WebHost [16] - Request finished in 3338.5555ms 200 text/plain; charset=utf-8 
+INFO  13-17-2018 17:17:22 Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware [8] - Sending file. Request path: '/lib/bootstrap/dist/css/bootstrap.css'. Physical path: 'E:\Github\Ombi-ReleaseFinder\OmbiReleaseFinder\OmbiReleaseFinder\wwwroot\lib\bootstrap\dist\css\bootstrap.css' 
+INFO  13-17-2018 17:17:22 Microsoft.AspNetCore.Hosting.Internal.WebHost [8] - Request finished in 3395.2286ms 200 text/css 
+INFO  13-17-2018 17:17:22 Microsoft.AspNetCore.Hosting.Internal.WebHost [7] - Request starting HTTP/1.1 GET http://localhost:44346/favicon.ico   
+INFO  13-17-2018 17:17:22 Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware [13] - Sending file. Request path: '/favicon.ico'. Physical path: 'E:\Github\Ombi-ReleaseFinder\OmbiReleaseFinder\OmbiReleaseFinder\wwwroot\favicon.ico' 
+INFO  13-17-2018 17:17:22 Microsoft.AspNetCore.Hosting.Internal.WebHost [13] - Request finished in 13.4095ms 200 image/x-icon 
+INFO  13-18-2018 17:18:49 Microsoft.AspNetCore.Hosting.Internal.WebHost [12] - Request starting HTTP/1.1 GET http://localhost:44346/   
+INFO  13-18-2018 17:18:49 Microsoft.AspNetCore.Hosting.Internal.WebHost [11] - Request starting HTTP/1.1 DEBUG http://localhost:26531/  0 
+INFO  13-18-2018 17:18:49 Microsoft.AspNetCore.Hosting.Internal.WebHost [11] - Request finished in 66.7155ms 200  
+INFO  13-18-2018 17:18:49 Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker [12] - Route matched with {action = "Index", controller = "Home"}. Executing action OmbiReleaseFinder.Controllers.HomeController.Index (OmbiReleaseFinder) 
+INFO  13-18-2018 17:18:49 Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker [12] - Executing action method OmbiReleaseFinder.Controllers.HomeController.Index (OmbiReleaseFinder) - Validation state: Valid 
+INFO  13-18-2018 17:18:52 Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker [12] - Executed action method OmbiReleaseFinder.Controllers.HomeController.Index (OmbiReleaseFinder), returned result Microsoft.AspNetCore.Mvc.ViewResult in 2946.133ms. 
+INFO  13-18-2018 17:18:52 Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor [12] - Executing ViewResult, running view Index. 
+INFO  13-18-2018 17:18:52 Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor [12] - Executed ViewResult - view Index executed in 232.5369ms. 
+INFO  13-18-2018 17:18:52 Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker [12] - Executed action OmbiReleaseFinder.Controllers.HomeController.Index (OmbiReleaseFinder) in 3382.3223ms 
+INFO  13-18-2018 17:18:52 Microsoft.AspNetCore.Hosting.Internal.WebHost [12] - Request finished in 3671.7223ms 200 text/html; charset=utf-8 
+INFO  13-18-2018 17:18:52 Microsoft.AspNetCore.Hosting.Internal.WebHost [9] - Request starting HTTP/1.1 GET http://localhost:44346/Home/PostAndShow   
+INFO  13-18-2018 17:18:52 Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker [9] - Route matched with {action = "PostAndShow", controller = "Home"}. Executing action OmbiReleaseFinder.Controllers.HomeController.PostAndShow (OmbiReleaseFinder) 
+INFO  13-18-2018 17:18:52 Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker [9] - Executing action method OmbiReleaseFinder.Controllers.HomeController.PostAndShow (OmbiReleaseFinder) - Validation state: Valid 
+INFO  13-18-2018 17:18:54 Controllers.HomeController [9] - Test log information 001 
+INFO  13-18-2018 17:18:54 Controllers.HomeController [9] - Test log information 002 
+INFO  13-18-2018 17:18:54 Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker [9] - Executed action method OmbiReleaseFinder.Controllers.HomeController.PostAndShow (OmbiReleaseFinder), returned result Microsoft.AspNetCore.Mvc.ContentResult in 2096.3305ms. 
+INFO  13-18-2018 17:18:54 Microsoft.AspNetCore.Mvc.Infrastructure.ContentResultExecutor [9] - Executing ContentResult with HTTP Response ContentType of text/plain; charset=utf-8 
+INFO  13-18-2018 17:18:54 Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker [9] - Executed action OmbiReleaseFinder.Controllers.HomeController.PostAndShow (OmbiReleaseFinder) in 2115.0785ms 
+INFO  13-18-2018 17:18:54 Microsoft.AspNetCore.Hosting.Internal.WebHost [9] - Request finished in 2157.5618ms 200 text/plain; charset=utf-8 
+INFO  13-19-2018 17:19:39 Microsoft.AspNetCore.Hosting.Internal.WebHost [4] - Request starting HTTP/1.1 DEBUG http://localhost:26531/  0 
+INFO  13-19-2018 17:19:39 Microsoft.AspNetCore.Hosting.Internal.WebHost [12] - Request starting HTTP/1.1 GET http://localhost:44346/   
+INFO  13-19-2018 17:19:39 Microsoft.AspNetCore.Hosting.Internal.WebHost [4] - Request finished in 69.5358ms 200  
+INFO  13-19-2018 17:19:39 Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker [12] - Route matched with {action = "Index", controller = "Home"}. Executing action OmbiReleaseFinder.Controllers.HomeController.Index (OmbiReleaseFinder) 
+INFO  13-19-2018 17:19:39 Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker [12] - Executing action method OmbiReleaseFinder.Controllers.HomeController.Index (OmbiReleaseFinder) - Validation state: Valid 
+INFO  13-19-2018 17:19:42 Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker [12] - Executed action method OmbiReleaseFinder.Controllers.HomeController.Index (OmbiReleaseFinder), returned result Microsoft.AspNetCore.Mvc.ViewResult in 2964.8695ms. 
+INFO  13-19-2018 17:19:42 Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor [12] - Executing ViewResult, running view Index. 
+INFO  13-19-2018 17:19:43 Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor [12] - Executed ViewResult - view Index executed in 221.7873ms. 
+INFO  13-19-2018 17:19:43 Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker [12] - Executed action OmbiReleaseFinder.Controllers.HomeController.Index (OmbiReleaseFinder) in 3376.526ms 
+INFO  13-19-2018 17:19:43 Microsoft.AspNetCore.Hosting.Internal.WebHost [12] - Request finished in 3716.7336ms 200 text/html; charset=utf-8 
+INFO  13-19-2018 17:19:43 Microsoft.AspNetCore.Hosting.Internal.WebHost [8] - Request starting HTTP/1.1 GET http://localhost:44346/Home/PostAndShow   
+INFO  13-19-2018 17:19:43 Microsoft.AspNetCore.Hosting.Internal.WebHost [12] - Request starting HTTP/1.1 GET http://localhost:44346/css/site.css   
+INFO  13-19-2018 17:19:43 Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware [12] - Sending file. Request path: '/css/site.css'. Physical path: 'E:\Github\Ombi-ReleaseFinder\OmbiReleaseFinder\OmbiReleaseFinder\wwwroot\css\site.css' 
+INFO  13-19-2018 17:19:43 Microsoft.AspNetCore.Hosting.Internal.WebHost [12] - Request finished in 52.0761ms 200 text/css 
+INFO  13-19-2018 17:19:43 Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker [8] - Route matched with {action = "PostAndShow", controller = "Home"}. Executing action OmbiReleaseFinder.Controllers.HomeController.PostAndShow (OmbiReleaseFinder) 
+INFO  13-19-2018 17:19:43 Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker [8] - Executing action method OmbiReleaseFinder.Controllers.HomeController.PostAndShow (OmbiReleaseFinder) - Validation state: Valid 
+INFO  13-20-2018 17:20:09 Controllers.HomeController [8] - Test log information 001 
+INFO  13-20-2018 17:20:13 Controllers.HomeController [8] - Test log information 002 
+INFO  13-20-2018 17:20:17 Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker [8] - Executed action method OmbiReleaseFinder.Controllers.HomeController.PostAndShow (OmbiReleaseFinder), returned result Microsoft.AspNetCore.Mvc.ContentResult in 34392.5599ms. 
+INFO  13-20-2018 17:20:17 Microsoft.AspNetCore.Mvc.Infrastructure.ContentResultExecutor [8] - Executing ContentResult with HTTP Response ContentType of text/plain; charset=utf-8 
+INFO  13-20-2018 17:20:17 Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker [8] - Executed action OmbiReleaseFinder.Controllers.HomeController.PostAndShow (OmbiReleaseFinder) in 34435.7745ms 
+INFO  13-20-2018 17:20:17 Microsoft.AspNetCore.Hosting.Internal.WebHost [8] - Request finished in 34556.1907ms 200 text/plain; charset=utf-8 
+INFO  13-25-2018 17:25:27 Microsoft.AspNetCore.Hosting.Internal.WebHost [13] - Request starting HTTP/1.1 DEBUG http://localhost:26531/  0 
+INFO  13-25-2018 17:25:27 Microsoft.AspNetCore.Hosting.Internal.WebHost [8] - Request starting HTTP/1.1 GET http://localhost:44346/   
+INFO  13-25-2018 17:25:27 Microsoft.AspNetCore.Hosting.Internal.WebHost [13] - Request finished in 66.4224ms 200  
+INFO  13-25-2018 17:25:27 Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker [8] - Route matched with {action = "Index", controller = "Home"}. Executing action OmbiReleaseFinder.Controllers.HomeController.Index (OmbiReleaseFinder) 
+INFO  13-25-2018 17:25:27 Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker [8] - Executing action method OmbiReleaseFinder.Controllers.HomeController.Index (OmbiReleaseFinder) - Validation state: Valid 
+INFO  13-25-2018 17:25:30 Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker [8] - Executed action method OmbiReleaseFinder.Controllers.HomeController.Index (OmbiReleaseFinder), returned result Microsoft.AspNetCore.Mvc.ViewResult in 3026.5192ms. 
+INFO  13-25-2018 17:25:30 Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor [8] - Executing ViewResult, running view Index. 
+INFO  13-25-2018 17:25:31 Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor [8] - Executed ViewResult - view Index executed in 242.6228ms. 
+INFO  13-25-2018 17:25:31 Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker [8] - Executed action OmbiReleaseFinder.Controllers.HomeController.Index (OmbiReleaseFinder) in 3483.6389ms 
+INFO  13-25-2018 17:25:31 Microsoft.AspNetCore.Hosting.Internal.WebHost [8] - Request finished in 3760.9181ms 200 text/html; charset=utf-8 
+INFO  13-25-2018 17:25:31 Microsoft.AspNetCore.Hosting.Internal.WebHost [8] - Request starting HTTP/1.1 GET http://localhost:44346/css/site.css   
+INFO  13-25-2018 17:25:31 Microsoft.AspNetCore.Hosting.Internal.WebHost [17] - Request starting HTTP/1.1 GET http://localhost:44346/Home/PostAndShow   
+INFO  13-25-2018 17:25:31 Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker [17] - Route matched with {action = "PostAndShow", controller = "Home"}. Executing action OmbiReleaseFinder.Controllers.HomeController.PostAndShow (OmbiReleaseFinder) 
+INFO  13-25-2018 17:25:31 Microsoft.AspNetCore.Hosting.Internal.WebHost [10] - Request starting HTTP/1.1 GET http://localhost:44346/js/site.js?v=3Du1iGBAzHuNriw1qX6kHVKTqIzU5bV48fXOWjOwHKc   
+INFO  13-25-2018 17:25:31 Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker [17] - Executing action method OmbiReleaseFinder.Controllers.HomeController.PostAndShow (OmbiReleaseFinder) - Validation state: Valid 
+INFO  13-25-2018 17:25:33 Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware [10] - The file /js/site.js was not modified 
+INFO  13-25-2018 17:25:33 OmbiReleaseFinder.Controllers.HomeController [17] - Test log information 001 
+INFO  13-25-2018 17:25:34 OmbiReleaseFinder.Controllers.HomeController [17] - Test log information 001 
+INFO  13-25-2018 17:25:34 OmbiReleaseFinder.Controllers.HomeController [17] - Test log information 002 
+INFO  13-25-2018 17:25:34 Microsoft.AspNetCore.Hosting.Internal.WebHost [10] - Request finished in 3253.4826ms 304 application/javascript 
+INFO  13-25-2018 17:25:34 Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker [17] - Executed action method OmbiReleaseFinder.Controllers.HomeController.PostAndShow (OmbiReleaseFinder), returned result Microsoft.AspNetCore.Mvc.ContentResult in 3219.2083ms. 
+INFO  13-25-2018 17:25:34 Microsoft.AspNetCore.Mvc.Infrastructure.ContentResultExecutor [17] - Executing ContentResult with HTTP Response ContentType of text/plain; charset=utf-8 
+INFO  13-25-2018 17:25:34 Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker [17] - Executed action OmbiReleaseFinder.Controllers.HomeController.PostAndShow (OmbiReleaseFinder) in 3268.5483ms 
+INFO  13-25-2018 17:25:34 Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware [10] - Sending file. Request path: '/css/site.css'. Physical path: 'E:\Github\Ombi-ReleaseFinder\OmbiReleaseFinder\OmbiReleaseFinder\wwwroot\css\site.css' 
+INFO  13-25-2018 17:25:34 Microsoft.AspNetCore.Hosting.Internal.WebHost [17] - Request finished in 3333.8926ms 200 text/plain; charset=utf-8 
+INFO  13-25-2018 17:25:34 Microsoft.AspNetCore.Hosting.Internal.WebHost [10] - Request finished in 3367.5383ms 200 text/css 
+INFO  13-26-2018 17:26:53 Microsoft.AspNetCore.Hosting.Internal.WebHost [7] - Request starting HTTP/1.1 DEBUG http://localhost:26531/  0 
+INFO  13-26-2018 17:26:53 Microsoft.AspNetCore.Hosting.Internal.WebHost [11] - Request starting HTTP/1.1 GET http://localhost:44346/   
+INFO  13-26-2018 17:26:53 Microsoft.AspNetCore.Hosting.Internal.WebHost [7] - Request finished in 75.3737ms 200  
+INFO  13-26-2018 17:26:53 Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker [11] - Route matched with {action = "Index", controller = "Home"}. Executing action OmbiReleaseFinder.Controllers.HomeController.Index (OmbiReleaseFinder) 

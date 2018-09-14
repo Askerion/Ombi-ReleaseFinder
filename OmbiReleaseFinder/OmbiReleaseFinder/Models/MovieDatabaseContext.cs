@@ -22,9 +22,9 @@ namespace OmbiReleaseFinder.Models
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
-            {
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
-                optionsBuilder.UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=MovieDatabase;Trusted_Connection=True;");
+            {                
+                //optionsBuilder.UseSqlite(@"DataSource=database.db;");
+                //optionsBuilder.UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=MovieDatabase;Trusted_Connection=True;");
             }
         }
 
@@ -32,7 +32,7 @@ namespace OmbiReleaseFinder.Models
         {
             modelBuilder.Entity<CustomMovie>(entity =>
             {
-                entity.Property(e => e.Id).HasDefaultValueSql("(newid())");
+                entity.Property(e => e.Id).HasDefaultValueSql("date('now')");
 
                 entity.Property(e => e.OriginalTitle).IsRequired();
 
@@ -41,7 +41,7 @@ namespace OmbiReleaseFinder.Models
 
             modelBuilder.Entity<FtpRelease>(entity =>
             {
-                entity.Property(e => e.Id).HasDefaultValueSql("(newid())");
+                entity.Property(e => e.Id).HasDefaultValueSql("date('now')");
 
                 entity.Property(e => e.FtpFolder).IsUnicode(false);
 
@@ -57,7 +57,7 @@ namespace OmbiReleaseFinder.Models
 
             modelBuilder.Entity<Releasenames>(entity =>
             {
-                entity.Property(e => e.Id).HasDefaultValueSql("(newid())");
+                entity.Property(e => e.Id).HasDefaultValueSql("date('now')");
 
                 entity.HasOne(d => d.Movie)
                     .WithMany(p => p.Releasenames)

@@ -2,33 +2,55 @@
 @model CustomMovie
 @{
 
-        Layout = null;
+    Layout = null;
+
+
 
 }
 
-<!-- Modal -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg" role="document">
+<div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="gridSystemModalLabel" id="myModal">
+    <div class="modal-dialog" role="document">
         <div class="modal-content">
-            <table id="classTable" class="customTable">
-                <thead>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><img src="@Html.DisplayFor(x => x.PosterPath)" alt="Image" /></td>
-                        <td>
-                            @foreach (var item in Model.FtpRelease)
-                            {
-                                @Html.DisplayFor(modelItem => item.FtpReleasename)<BR>
-                            }
-                        </td>
-
-                    </tr>
-                </tbody>
-            </table>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="gridSystemModalLabel">@Html.DisplayFor(x => x.Title)</h4>
             </div>
-        </div>
-    </div>
-</div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-3">
+                        <p>
+                            <img src="@Html.DisplayFor(x => x.PosterPath)" alt="Image" />
+                        </p>
+                    </div>
+                    <div class="col-md-9">
+                        <p>
+                            <div class="overview">When a young nun at a cloistered abbey in Romania takes her own life, a priest with a haunted past and a novitiate on the threshold of her final vows are sent by the Vatican to investigate. Together they uncover the order’s unholy secret. Risking not only their lives but their faith and their very souls, they confront a malevolent force in the form of the same demonic nun that first terrorized audiences in “The Conjuring 2,” as the abbey becomes a horrific battleground between the living and the damned.</div><br>
+
+                        </p>
+                    </div>
+                </div>
+                @foreach (var item in Model.FtpRelease)
+                {
+                <div class="row">
+                    <div class="col-md-11">
+                         <p>
+                             @Html.DisplayFor(modelItem => item.FtpReleasename)<BR>
+                         </p>
+                    </div>
+                    <div class="col-md-1">
+                        <p>
+                            Button
+                        </p>
+                    </div>
+                </div>
+
+
+                }
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>                
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

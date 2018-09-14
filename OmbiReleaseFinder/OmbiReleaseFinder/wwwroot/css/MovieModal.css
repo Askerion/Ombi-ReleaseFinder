@@ -1,5 +1,47 @@
-﻿body {
+﻿.modal-dialog {
+    width: 800px;   
 }
-.customTable {
-    border: none;
+.modal-body {
+    background-color: #252a33;
+    color: #ECEFF1;
 }
+.modal-header {
+    background-color: #252a33;
+    color: #ECEFF1;
+}
+.modal-footer {
+    background-color: #252a33;
+    color: #ECEFF1;
+}
+.modal-content {
+    background-color: #252a33;
+    color: #ECEFF1;
+}
+
+/*.modal-body {
+    border-radius: 0;
+}
+
+.modal-content {
+    height: 100%;
+    border-radius: 0;
+    position: relative;
+}
+
+.modal-footer {
+    border-radius: 0;
+    bottom: 0px;
+    position: absolute;
+    width: 100%;
+}
+.moviePosterInModal {
+    padding: 20px;
+    width: 20%;
+    float: left;
+}
+.movieDetails {
+    width: 80%;
+    float: left;
+    padding-left: 70px;
+    padding-right: 30px;
+}*/

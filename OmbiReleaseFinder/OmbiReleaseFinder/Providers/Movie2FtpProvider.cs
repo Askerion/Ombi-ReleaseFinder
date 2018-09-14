@@ -10,8 +10,12 @@ namespace OmbiReleaseFinder.Providers
 {
     internal class Movie2FtpProvider
     {
-        private MovieDatabaseContext _db = new MovieDatabaseContext();
-        
+        private MovieDatabaseContext _db;
+
+        public Movie2FtpProvider(MovieDatabaseContext db)
+        {            
+            _db = db;
+        }
 
 
         public void SearchMoviewithRegex()

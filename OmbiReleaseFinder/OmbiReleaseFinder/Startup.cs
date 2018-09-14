@@ -1,7 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Threading.Tasks;
+using log4net;
+using log4net.Config;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -10,8 +14,10 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
 using OmbiReleaseFinder.Classes;
 using OmbiReleaseFinder.Models;
+
 
 namespace OmbiReleaseFinder
 {
@@ -34,28 +40,37 @@ namespace OmbiReleaseFinder
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
-            //SQL Server hinzufügen
-            //var connection = @"Server=(localdb)\mssqllocaldb;Database=MovieDatabase;Trusted_Connection=True;";
-            //services.AddDbContext<MovieDBContext>(options => options.UseSqlServer(connection));
-            //services.AddDbContext<MovieDBContext>(options => options.UseSqlServer(Configuration.GetConnectionString("MovieDatabase")));
 
-
-
+            services.AddDbContext<MovieDatabaseContext>(options => options.UseSqlite(Configuration.GetConnectionString("Database")));
+    
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
             services.AddMvc();
 
-            services.AddSingleton<Microsoft.Extensions.Hosting.IHostedService, FtpScheduleTask>();
-
-            services.AddSingleton<Microsoft.Extensions.Hosting.IHostedService, MovieSearchScheduleTask>();
-
             services.Configure<AppSettingFtp>(Configuration.GetSection("FTPSettings"));
+            services.Configure<AppSettingOmbi>(Configuration.GetSection("OmbiSettings"));
+
+
+            //services.AddScoped<MovieDatabaseContext>();
+            services.AddSingleton<Microsoft.Extensions.Hosting.IHostedService, FtpScheduleTask>();
+            services.AddSingleton<Microsoft.Extensions.Hosting.IHostedService, MovieSearchScheduleTask>();
 
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
+            // Log4Net Config
+            var logRepository = LogManager.GetRepository(Assembly.GetEntryAssembly());
+            XmlConfigurator.Configure(logRepository, new FileInfo("log4net.config"));
+
+            //Generate Database on Startup
+            using (var serviceScope = app.ApplicationServices.GetService<IServiceScopeFactory>().CreateScope())
+            {
+                var context = serviceScope.ServiceProvider.GetRequiredService<MovieDatabaseContext>();
+                context.Database.Migrate();               
+            }
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();

@@ -1,6 +1,5 @@
 ﻿<link rel="stylesheet" href="~/css/home.css" />
 
-
 @model IEnumerable<CustomMovie>
 @{
     ViewData["Title"] = "Home Page";
@@ -10,99 +9,34 @@
     Layout = "~/Views/Shared/_customlayout.cshtml";
 
 }
+<meta http-equiv="refresh" content="1500">
+<head>
 
-
-@*<script>
-        $("#list li").live('click', function () {
-            //  ret = DetailsView.GetProject($(this).attr("#data-id"), OnComplete, OnTimeOut, OnError);
-            alert($(this).data("id"));
-        });
-
-        function myFunction() {
-            alert($("#button1").data("sample-id"));
-        }
-
-
-        function myFunction2() {
-            alert($("#qrCode").data("sample-id"));
-        }
-    </script>*@
-
-
-
-
-
-@*<h2>Testprojekt mit Liste als Model</h2>
-    <textarea class="form-control" id="TextBox1"></textarea>
-
-    <table id="PersonTable" class="table table-hover table-striped table-bordered">
-        <thead>
-            <tr>
-                <th>
-                    @Html.DisplayNameFor(model => model.PosterPath)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.OriginalTitle)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Title)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Releasenames)
-                </th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var item in Model)
-            {
-                <tr>
-                    <td>
-                        <img src="@Url.Content(item.PosterPath)" alt="Image" />
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.OriginalTitle)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Title)
-                    </td>
-                    <td>
-                        @foreach (var name in item.Releasenames)
-                        {
-                            @Html.DisplayFor(modelItem => name.Name)<BR>
-                        }
-                    </td>
-                    <td>
-                        @if (item.FtpRelease.Count > 0)
-                        {
-                            <div id="modal-placeholder"></div>
-                            <button type="button" class="btn btn-primary btn-lg" data-toggle="ajax-modal" data-target="#myModal" data-url="@Url.Action("MovieModal")" data-search="?moviedbid=" data-movieid="@item.MovieDbId">
-                                Release Found
-                            </button>
-                        }
-
-
-
-
-                    </td>
-                </tr>
-            }
-        </tbody>
-    </table>*@
-
-
-<div class="container">
-    <div class="row">
-        <div class="col">
-            <div class="top"><span class="header"><i class="fa fa-film icon" aria-hidden="true"></i>&nbspCINEBOX</span></div>
-        </div>
+</head>
+<body>
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="#">Home</a>
+        <a href="/Home/Releases">Releases</a>
+        <a href="#">Clients</a>
+        <a href="#">Contact</a>
     </div>
-    <div class="row">
-        <div class="col">
-            <div class="menu-filter">
-                <div class="row">
-                    <div class="col pull-left">
+    <span style="font-size:30px;cursor:pointer;float: right;" onclick="openNav()">&#9776;</span>
+
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="top"><span class="header"><i class="fa fa-film icon" aria-hidden="true"></i>&nbspCINEBOX</span></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="menu-filter">
+                    <div class="row">                
+                        <object data="@Url.Action("PostAndShow", "")"></object>   
                     </div>
                     <div class="col pull-right">
+
                     </div>
                 </div>
             </div>
@@ -111,52 +45,59 @@
     <div class="row movies">
 
 
-        @foreach (var item in Model)
-        {
-            <div class="col-lg-4">
-                <div class="wrapper">
-                    <div class="row no-gutters">
-                        <div class="col-lg-6">
-                            <div class="movies" id="1">
-                                @*<img src="@Url.Content(item.PosterPath)" alt="Image" height="278" /> <br>*@
-                                <input type="image" id="image33" src="@Url.Content(item.PosterPath)" data-toggle="ajax-modal" data-target="#myModal" data-url="@Url.Action("MovieModal")" data-search="?moviedbid=" data-movieid="@item.MovieDbId" height="278" />
+            @foreach (var item in Model)
+            {
+                <div class="col-lg-4">
+                    <div class="wrapper">
+                        <div class="row no-gutters">
+                            <div class="col-lg-6">
+                                <div class="movies" id="1">
+                                    @*<img src="@Url.Content(item.PosterPath)" alt="Image" height="278" /> <br>*@
+                                    <input type="image" id="image33" src="@Url.Content(item.PosterPath)" data-toggle="ajax-modal" data-target="#myModal" data-url="@Url.Action("MovieModal")" data-search="?moviedbid=" data-movieid="@item.MovieDbId" height="278" />
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-lg-6">
-                            <div class="side">
-                                <div class="row">
-                                    <div class="col-12">
-                                        <div class="mname">@Html.DisplayFor(modelItem => item.Title)</div>
-                                    </div>
-                                    <div id="modal-placeholder"></div>
-                                    @*<button type="button" class="btn btn-primary btn-lg" data-toggle="ajax-modal" data-target="#myModal" data-url="@Url.Action("MovieModal")" data-search="?moviedbid=" data-movieid="@item.MovieDbId">
-                                            Release Found
-                                        </button>*@
-                                    @*<div class="col-12">
-                                            <div class="year">(2014)</div>
+                            <div class="col-lg-6">
+                                <div class="side">
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <div class="mname">@Html.DisplayFor(modelItem => item.Title)</div>
                                         </div>
-                                        <div class="col-12 stars">
-                                            <i class="fa fa-star" aria-hidden="true"></i>
-                                            <i class="fa fa-star" aria-hidden="true"></i>
-                                            <i class="fa fa-star" aria-hidden="true"></i>
-                                            <i class="fa fa-star" aria-hidden="true"></i>
-                                            <i class="fa fa-star-o" aria-hidden="true"></i>
-                                        </div>*@
+                                        <div id="modal-placeholder"></div>
+                                        @*<button type="button" class="btn btn-primary btn-lg" data-toggle="ajax-modal" data-target="#myModal" data-url="@Url.Action("MovieModal")" data-search="?moviedbid=" data-movieid="@item.MovieDbId">
+                                                Release Found
+                                            </button>*@
+                                        @*<div class="col-12">
+                                                <div class="year">(2014)</div>
+                                            </div>
+                                            <div class="col-12 stars">
+                                                <i class="fa fa-star" aria-hidden="true"></i>
+                                                <i class="fa fa-star" aria-hidden="true"></i>
+                                                <i class="fa fa-star" aria-hidden="true"></i>
+                                                <i class="fa fa-star" aria-hidden="true"></i>
+                                                <i class="fa fa-star-o" aria-hidden="true"></i>
+                                            </div>*@
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        }
+            }
 
 
 
 
 
 
-    </div>
-</div>
+        </div>
+ 
+
+</body>
+
+
+
+
+
 
 
 

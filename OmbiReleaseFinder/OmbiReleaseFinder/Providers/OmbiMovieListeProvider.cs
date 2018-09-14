@@ -17,15 +17,22 @@ namespace OmbiReleaseFinder.Providers
 {
     internal class OmbiMovieListeProvider
     {
-        private MovieDatabaseContext _db = new MovieDatabaseContext();
+        private MovieDatabaseContext _db;
+        private IOptions<AppSettingOmbi> _ombiSettings { get; set; }
+
+        public OmbiMovieListeProvider(IOptions<AppSettingOmbi> ombiSettings, MovieDatabaseContext db)
+        {
+            _ombiSettings = ombiSettings;
+            _db = db;
+        }
 
         public void GetorUpgradeMovie()
         {
 
             WebClient request = new WebClient();
             request.Headers.Add("Content-Type", "appication/json");
-            request.Headers.Add("Apikey", HomeController._ombiSettings.Value.OmbiApikey);
-            var json = request.DownloadString(HomeController._ombiSettings.Value.OmbiUrl);
+            request.Headers.Add("Apikey", _ombiSettings.Value.OmbiApikey);
+            var json = request.DownloadString(_ombiSettings.Value.OmbiUrl);
 
             
             var settings = new JsonSerializerSettings
@@ -87,7 +94,7 @@ namespace OmbiReleaseFinder.Providers
                 if (_customMovie == null)
                 {
                     ApiQueryResponse<Movie> findMovie = await searchMoviefromTheMovieDB(m.theMovieDbId);
-                    _db.Add(new CustomMovie { OriginalTitle = findMovie.Item.OriginalTitle, PosterPath = "http://image.tmdb.org/t/p/w185/" + findMovie.Item.PosterPath, MovieDbId = findMovie.Item.Id, Releasenames = GetText(findMovie.Item.Title), Title = findMovie.Item.Title });
+                    _db.Add(new CustomMovie { OriginalTitle = findMovie.Item.OriginalTitle, PosterPath = "http://image.tmdb.org/t/p/w185/" + findMovie.Item.PosterPath, Overview= findMovie.Item.Overview, Rating = findMovie.Item.Popularity, MovieDbId = findMovie.Item.Id, Releasenames = GetText(findMovie.Item.Title), Title = findMovie.Item.Title });
                     _db.SaveChanges();
                     
                 }

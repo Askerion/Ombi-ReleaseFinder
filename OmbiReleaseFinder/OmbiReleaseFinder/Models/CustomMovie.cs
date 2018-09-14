@@ -11,11 +11,12 @@ namespace OmbiReleaseFinder.Models
             Releasenames = new HashSet<Releasenames>();
         }
 
-        public Guid Id { get; set; }
+        public int Id { get; set; }
         public int MovieDbId { get; set; }
         public string OriginalTitle { get; set; }
         public string Title { get; set; }
         public string Overview { get; set; }
+        public double Rating { get; set; }
         public string PosterPath { get; set; }
 
         public ICollection<FtpRelease> FtpRelease { get; set; }

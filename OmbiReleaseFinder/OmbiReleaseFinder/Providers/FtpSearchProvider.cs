@@ -1,21 +1,28 @@
 ﻿using Microsoft.Extensions.Options;
 using OmbiReleaseFinder.Models;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace OmbiReleaseFinder.Providers
 {
     internal class FtpSearchProvider
     {
-        private MovieDatabaseContext _db = new MovieDatabaseContext();
+        private MovieDatabaseContext _db;
+
+        private IOptions<AppSettingFtp> FtpConfiguration { get; set; }
+
+        public FtpSearchProvider(IOptions<AppSettingFtp> ftpSettings, MovieDatabaseContext db)
+        {
+            FtpConfiguration = ftpSettings;
+            _db = db;
+        }
 
 
-        public void GetFtpReleases(IOptions<AppSettingFtp> appSettingFtp)
+        public void GetFtpReleases()
         {
             //Konfig FTP Folder parsen
-            string[] sArray = appSettingFtp.Value.Folders.Split(';');
+            //var ftpConfig = FtpConfiguration.Value;
+            string[] sArray = FtpConfiguration.Value.Folders.Split(';');
+            
 
 
             Rebex.Licensing.Key = "==AOptXWwcjeC/mE+S0K60UcnUhOW7heBDBmgjFhBdpuvU==";
@@ -23,12 +30,12 @@ namespace OmbiReleaseFinder.Providers
             {
                 client.Settings.SslAcceptAllCertificates = true;
                 // connect and log in
-                client.Connect(appSettingFtp.Value.Host, appSettingFtp.Value.Port);
+                client.Connect(FtpConfiguration.Value.Host, FtpConfiguration.Value.Port);
                 //if ssl true
-                if (appSettingFtp.Value.Ssl == true)
+                if (FtpConfiguration.Value.Ssl == true)
                     client.Secure();
                 //FTP Login
-                client.Login(appSettingFtp.Value.Username, appSettingFtp.Value.Passwort);
+                client.Login(FtpConfiguration.Value.Username, FtpConfiguration.Value.Passwort);
                 //FTP Root Login
                 client.ChangeDirectory("/");
 
