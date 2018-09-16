@@ -1,6 +1,7 @@
 ﻿using Microsoft.Extensions.Options;
 using OmbiReleaseFinder.Models;
 using System.Linq;
+using OmbiReleaseFinder.Classes;
 
 namespace OmbiReleaseFinder.Providers
 {

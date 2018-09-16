@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace OmbiReleaseFinder.Models
+namespace OmbiReleaseFinder.Classes
 {
     public class AppSettingOmbi
     {

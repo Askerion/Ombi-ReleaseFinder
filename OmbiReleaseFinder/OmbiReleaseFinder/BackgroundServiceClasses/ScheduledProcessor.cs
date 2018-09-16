@@ -7,7 +7,7 @@ using Microsoft.Extensions.DependencyInjection;
 using NCrontab;
 using OmbiReleaseFinder.BackgroundService;
 
-namespace OmbiReleaseFinder.Classes
+namespace OmbiReleaseFinder.BackgroundServiceClasses
 {
     public abstract class ScheduledProcessor : ScopedProcessor
     {

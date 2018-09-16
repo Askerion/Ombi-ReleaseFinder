@@ -10,6 +10,7 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using OmbiReleaseFinder.Models;
 using OmbiReleaseFinder.Providers;
+using OmbiReleaseFinder.Classes;
 
 namespace OmbiReleaseFinder.Controllers
 {

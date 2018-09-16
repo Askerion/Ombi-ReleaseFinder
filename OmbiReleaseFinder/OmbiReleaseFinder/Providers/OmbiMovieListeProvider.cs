@@ -2,7 +2,7 @@
 using DM.MovieApi.ApiResponse;
 using DM.MovieApi.MovieDb.Movies;
 using Newtonsoft.Json;
-using OmbiReleaseFinder.Classes;
+using OmbiReleaseFinder.BackgroundServiceClasses;
 using OmbiReleaseFinder.Models;
 using System;
 using System.Collections.Generic;
@@ -12,6 +12,7 @@ using System.Threading.Tasks;
 using Microsoft.Extensions.Options;
 using Microsoft.EntityFrameworkCore;
 using OmbiReleaseFinder.Controllers;
+using OmbiReleaseFinder.Classes;
 
 namespace OmbiReleaseFinder.Providers
 {

@@ -1,6 +1,7 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
+using OmbiReleaseFinder.Classes;
 using OmbiReleaseFinder.Controllers;
 using OmbiReleaseFinder.Models;
 using OmbiReleaseFinder.Providers;
@@ -9,7 +10,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace OmbiReleaseFinder.Classes
+namespace OmbiReleaseFinder.BackgroundServiceClasses
 {
     public class FtpScheduleTask : ScheduledProcessor
     {

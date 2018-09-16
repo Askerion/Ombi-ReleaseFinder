@@ -15,9 +15,9 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using OmbiReleaseFinder.Classes;
+using OmbiReleaseFinder.BackgroundServiceClasses;
 using OmbiReleaseFinder.Models;
-
+using OmbiReleaseFinder.Classes;
 
 namespace OmbiReleaseFinder
 {
