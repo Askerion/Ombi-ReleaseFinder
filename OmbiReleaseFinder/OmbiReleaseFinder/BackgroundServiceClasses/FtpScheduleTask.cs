@@ -14,6 +14,7 @@ namespace OmbiReleaseFinder.BackgroundServiceClasses
 {
     public class FtpScheduleTask : ScheduledProcessor
     {
+        private static readonly log4net.ILog log = log4net.LogManager.GetLogger(typeof(FtpScheduleTask));
         private IOptions<AppSettingFtp> FtpConfiguration { get; set; }
         private MovieDatabaseContext _db;
 
@@ -28,10 +29,19 @@ namespace OmbiReleaseFinder.BackgroundServiceClasses
 
         public override Task ProcessInScope(IServiceProvider serviceProvider)
         {
+            //Suche nach FTP Releasen
+            log.Info("Task: Suche nach FTP Releasen");
             var startFtpSearch = new FtpSearchProvider(FtpConfiguration, _db);
             startFtpSearch.GetFtpReleases();
 
-            Console.WriteLine("Processing starts here");
+            log.Info("Task: Mappe Release zu Movie");
+            //Mappe Release zu Movies
+            var mapMovies = new Movie2FtpProvider(_db);
+            mapMovies.SearchMoviewithRegex();
+
+
+
+            log.Info("Task: Fertig");
             return Task.CompletedTask;
         }
     }

@@ -10,6 +10,7 @@ namespace OmbiReleaseFinder.Providers
 {
     internal class Movie2FtpProvider
     {
+        private static readonly log4net.ILog log = log4net.LogManager.GetLogger(typeof(Movie2FtpProvider));
         private MovieDatabaseContext _db;
 
         public Movie2FtpProvider(MovieDatabaseContext db)

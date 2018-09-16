@@ -18,6 +18,7 @@ namespace OmbiReleaseFinder.Providers
 {
     internal class OmbiMovieListeProvider
     {
+        private static readonly log4net.ILog log = log4net.LogManager.GetLogger(typeof(OmbiMovieListeProvider));
         private MovieDatabaseContext _db;
         private IOptions<AppSettingOmbi> _ombiSettings { get; set; }
 
@@ -29,23 +30,33 @@ namespace OmbiReleaseFinder.Providers
 
         public void GetorUpgradeMovie()
         {
-
-            WebClient request = new WebClient();
-            request.Headers.Add("Content-Type", "appication/json");
-            request.Headers.Add("Apikey", _ombiSettings.Value.OmbiApikey);
-            var json = request.DownloadString(_ombiSettings.Value.OmbiUrl);
-
-            
-            var settings = new JsonSerializerSettings
+            try
             {
-                NullValueHandling = NullValueHandling.Ignore,
-                MissingMemberHandling = MissingMemberHandling.Ignore
-            };
+                log.Info("Task: Suche Ombi Movies");
+                WebClient request = new WebClient();
+                request.Headers.Add("Content-Type", "appication/json");
+                request.Headers.Add("Apikey", _ombiSettings.Value.OmbiApikey);
+                var json = request.DownloadString(_ombiSettings.Value.OmbiUrl);
 
-            List<OmbiMovieListModel> objData = JsonConvert.DeserializeObject<List<OmbiMovieListModel>>(json, settings);
 
+                var settings = new JsonSerializerSettings
+                {
+                    NullValueHandling = NullValueHandling.Ignore,
+                    MissingMemberHandling = MissingMemberHandling.Ignore
+                };
+
+                List<OmbiMovieListModel> objData = JsonConvert.DeserializeObject<List<OmbiMovieListModel>>(json, settings);
+
+                log.Info("Task: Speichere Ombi Movies");
+                SaveData(objData);
+
+            }
+            catch (Exception ex)
+            {
+
+                log.Info("Task: Fehler" + ex);
+            }
             
-            SaveData(objData);
 
             //Coming soon
             //var output = "dir".Bash();        

@@ -14,6 +14,7 @@ namespace OmbiReleaseFinder.BackgroundServiceClasses
 {
     public class MovieSearchScheduleTask : ScheduledProcessor
     {
+        private static readonly log4net.ILog log = log4net.LogManager.GetLogger(typeof(MovieSearchScheduleTask));
         private IOptions<AppSettingOmbi> _ombiSettings;
         private MovieDatabaseContext _db;
 
@@ -24,13 +25,15 @@ namespace OmbiReleaseFinder.BackgroundServiceClasses
             _db = serviceScopeFactory.CreateScope().ServiceProvider.GetRequiredService<MovieDatabaseContext>();
         }
 
-        protected override string Schedule => "*/1 * * * *";
+        protected override string Schedule => "*/3 * * * *";
 
         public override Task ProcessInScope(IServiceProvider serviceProvider)
         {
-            //Todo: wieder anschalten
+            //Suche nach neuen Movies
+            log.Info("Task: Suche nach neuen Movies");
             OmbiMovieListeProvider ombiMovieListeProvider = new OmbiMovieListeProvider(_ombiSettings, _db);
             ombiMovieListeProvider.GetorUpgradeMovie();
+            log.Info("Task: Fertig");
 
             //Console.WriteLine("Processing starts here");
             return Task.CompletedTask;
