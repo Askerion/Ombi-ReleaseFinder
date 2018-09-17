@@ -11,6 +11,7 @@ using Microsoft.Extensions.Options;
 using OmbiReleaseFinder.Models;
 using OmbiReleaseFinder.Providers;
 using OmbiReleaseFinder.Classes;
+using System.IO;
 
 namespace OmbiReleaseFinder.Controllers
 {
@@ -52,13 +53,16 @@ namespace OmbiReleaseFinder.Controllers
 
         public ActionResult PostAndShow()
         {
-            log.Info("Test log information 001");
-          
 
-            log.Info("Test log information 001");
-            log.Info("Test log information 002");
-           
-          
+            //string path = "myapp.log";
+
+            //using (FileStream fileStream = new FileStream(path, FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
+            //using (StreamReader streamReader = new StreamReader(fileStream))
+            //{
+            //    var line = streamReader.ReadLine();
+            //    return Content(streamReader.ReadToEnd());
+            //}
+
 
 
             //do the posting 

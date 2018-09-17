@@ -4,24 +4,16 @@
 @{
     ViewData["Title"] = "Home Page";
 }
-@{
+@*@{
 
     Layout = "~/Views/Shared/_customlayout.cshtml";
 
-}
+}*@
 <meta http-equiv="refresh" content="1500">
 <head>
 
 </head>
-<body>
-    <div id="mySidenav" class="sidenav">
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        <a href="#">Home</a>
-        <a href="/Home/Releases">Releases</a>
-        <a href="#">Clients</a>
-        <a href="#">Contact</a>
-    </div>
-    <span style="font-size:30px;cursor:pointer;float: right;" onclick="openNav()">&#9776;</span>
+<body>   
 
     <div class="container">
         <div class="row">
@@ -32,9 +24,9 @@
         <div class="row">
             <div class="col">
                 <div class="menu-filter">
-                    <div class="row">                
+                    @*<div class="row">                
                         <object data="@Url.Action("PostAndShow", "")"></object>   
-                    </div>
+                    </div>*@
                     <div class="col pull-right">
 
                     </div>

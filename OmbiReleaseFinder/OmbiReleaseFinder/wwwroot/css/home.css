@@ -34,7 +34,7 @@ body {
 
 
 .menu-filter {
-    height: 75px;
+    /*height: 75px;*/
     width: 100%;
     background: #303844;
     margin-bottom: 25px;
@@ -121,4 +121,11 @@ body {
         .sidenav a {
             font-size: 18px;
         }
+}
+
+.container {
+    padding-right: 15px;
+    padding-left: 0px;
+    margin-right: auto;
+    margin-left: auto;
 }
