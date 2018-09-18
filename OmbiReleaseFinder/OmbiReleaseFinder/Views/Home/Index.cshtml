@@ -18,7 +18,9 @@
     <div class="container">
         <div class="row">
             <div class="col">
-                <div class="top"><span class="header"><i class="fa fa-film icon" aria-hidden="true"></i>&nbspCINEBOX</span></div>
+                <div class="top">
+                <span class="header"><i class="fa fa-film icon" aria-hidden="true"></i>&nbspCINEBOX</span>
+                </div>
             </div>
         </div>
         <div class="row">
@@ -45,7 +47,17 @@
                             <div class="col-lg-6">
                                 <div class="movies" id="1">
                                     @*<img src="@Url.Content(item.PosterPath)" alt="Image" height="278" /> <br>*@
-                                    <input type="image" id="image33" src="@Url.Content(item.PosterPath)" data-toggle="ajax-modal" data-target="#myModal" data-url="@Url.Action("MovieModal")" data-search="?moviedbid=" data-movieid="@item.MovieDbId" height="278" />
+                                    @*<input type="image" id="image33" src="@Url.Content(item.PosterPath)" data-toggle="ajax-modal" data-target="#myModal" data-url="@Url.Action("MovieModal")" data-search="?moviedbid=" data-movieid="@item.MovieDbId" height="278" />*@
+                                    @if (item.FtpRelease.Count > 0)
+                                    {
+                                        <div id="unten" data-toggle="ajax-modal" data-target="#myModal" data-url="@Url.Action("MovieModal")" data-search="?moviedbid=" data-movieid="@item.MovieDbId" style="background-image:url(@Url.Content(item.PosterPath))"></div>
+                                        <div id="oben"><label>Release Found</label></div>
+                                    }
+                                    else if (true)
+                                    {
+                                        <img src = "@Url.Content(item.PosterPath)" alt = "Image" height = "278" />
+                                    }
+
                                 </div>
                             </div>
                             <div class="col-lg-6">

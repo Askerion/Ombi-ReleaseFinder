@@ -1,7 +1,7 @@
 ﻿$(function () {
     var placeholderElement = $('#modal-placeholder');
 
-    $('button[data-toggle="ajax-modal"]').click(function (event) {
+    $('div[data-toggle="ajax-modal"]').click(function (event) {
         var url = $(this).data('url');
         var search = $(this).data('search');
         var themoviedbid = $(this).data('movieid');
@@ -59,9 +59,9 @@ $(function () {
 });
 
 function openNav() {
-    document.getElementById("mySidenav").style.width = "250px";
+    document.getElementById("myNav").style.width = "250px";
 }
 
 function closeNav() {
-    document.getElementById("mySidenav").style.width = "0";
+    document.getElementById("myNav").style.width = "0";
 }

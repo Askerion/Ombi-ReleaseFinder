@@ -38,14 +38,48 @@
                 </div>
             </div>
         </nav>*@
-    <div id="mySidenav" class="sidenav">
+    <div id="myNav" class="overlay">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        <a href="/">Home</a>
-        <a href="/Home/Series">Series</a>
-        <a href="/Home/Releases">Releases</a>
-        <a href="#">Contact</a>
+        <div class="overlay-content">
+            <a href="#">About</a>
+            <a href="#">Services</a>
+            <a href="#">Clients</a>
+            <a href="#">Contact</a>
+        </div>
     </div>
-    <span style="font-size:30px;cursor:pointer;float: right;" onclick="openNav()">&#9776;</span>
+    <div class="skinHeader">
+        <div class="flex headerTop">
+            <div class="headerLeft">
+                <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+                <h3 class="pageTitle pageTitleWithLogo"></h3>
+            </div>
+            <div class="headerRight">
+                <span class="headerSelectedPlayer"></span>
+                <button is="paper-icon-button-light" class="headerCastButton castButton headerButton headerButtonRight paper-icon-button-light">
+                    <i class="md-icon"></i>
+                </button>
+                <button type="button" is="paper-icon-button-light" class="headerButton headerButtonRight headerSearchButton paper-icon-button-light">
+                    <i class="md-icon"></i>
+                </button>
+                <button is="paper-icon-button-light" class="headerButton headerButtonRight headerUserButton paper-icon-button-light">
+                    <i class="md-icon"></i>
+                </button>
+                <button is="paper-icon-button-light" class="headerButton headerButtonRight headerSettingsButton paper-icon-button-light">
+                    <i class="md-icon"></i>
+                </button>
+            </div>
+        </div>
+
+    </div>
+
+    @*<div id="mySidenav" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <a href="/">Home</a>
+            <a href="/Home/Series">Series</a>
+            <a href="/Home/Releases">Releases</a>
+            <a href="#">Contact</a>
+        </div>
+        <span style="font-size:30px;cursor:pointer;float: right;" onclick="openNav()">&#9776;</span>*@
 
     <partial name="_CookieConsentPartial" />
 

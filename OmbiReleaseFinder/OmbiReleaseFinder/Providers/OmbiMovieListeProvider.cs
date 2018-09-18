@@ -106,7 +106,7 @@ namespace OmbiReleaseFinder.Providers
                 if (_customMovie == null)
                 {
                     ApiQueryResponse<Movie> findMovie = await searchMoviefromTheMovieDB(m.theMovieDbId);
-                    _db.Add(new CustomMovie { OriginalTitle = findMovie.Item.OriginalTitle, PosterPath = "http://image.tmdb.org/t/p/w185/" + findMovie.Item.PosterPath, Overview= findMovie.Item.Overview, Rating = findMovie.Item.Popularity, MovieDbId = findMovie.Item.Id, Releasenames = GetText(findMovie.Item.Title), Title = findMovie.Item.Title });
+                    _db.Add(new CustomMovie { OriginalTitle = findMovie.Item.OriginalTitle, PosterPath = "http://image.tmdb.org/t/p/w185/" + findMovie.Item.PosterPath, Overview= findMovie.Item.Overview, Rating = findMovie.Item.VoteAverage, MovieDbId = findMovie.Item.Id, Releasenames = GetText(findMovie.Item.Title), Title = findMovie.Item.Title });
                     _db.SaveChanges();
                     
                 }

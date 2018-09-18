@@ -9,7 +9,7 @@ body {
  Set some basic padding to keep content from hitting the edges*/ 
 .body-content {
     padding-left: 15px;
-    padding-right: 15px;
+    padding-right: 15px;   
 }
 
  /*Carousel*/ 
@@ -38,3 +38,71 @@ body {
 
 
 
+
+.skinHeader {
+    /*position: fixed;*/
+    right: 0;
+    left: 0;
+    z-index: 999;
+    top: 0;
+    border: 0;
+    display: flex;
+    flex-direction: column;
+    contain: layout style paint;
+    background-color: #1f1f1f;
+}
+
+.flex {
+    display: flex;
+    -webkit-box-flex: 1;
+    -webkit-flex-grow: 1;
+    flex-grow: 1;
+}
+
+.headerTop {
+    padding: 1.489em 0;
+    background-color: #252a33;
+}
+
+.paper-icon-button-light > i {
+    font-size: 1.66956521739130434em;
+    position: relative;
+    z-index: 1;
+    vertical-align: middle;
+}
+
+.pageTitleWithLogo {
+    background-position: left center;
+    -webkit-background-size: contain;
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 13.2em;
+    height: 1.22em;
+    background-image: url('../images/Theli_Logo_Weiss.png');
+}
+    .pageTitle {
+    display: -webkit-inline-box;
+    display: -webkit-inline-flex;
+    display: inline-flex;
+    margin: 0 0 0 .5em;
+    height: 1.7em;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-flex-shrink: 1;
+    flex-shrink: 1;
+}
+
+.headerLeft {
+    display: flex;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-box-flex: 1;
+    -webkit-flex-grow: 1;
+    flex-grow: 1;
+    overflow: hidden;
+}
+
+.headerRight {
+    -webkit-box-align: center;
+}
